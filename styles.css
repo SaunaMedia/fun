@@ -35,7 +35,7 @@ body {
   margin: 0 auto;
   padding: max(env(safe-area-inset-top), 8px) 10px max(env(safe-area-inset-bottom), 10px);
   display: grid;
-  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  grid-template-rows: auto auto minmax(0, 2fr) minmax(0, 1fr);
   gap: 8px;
 }
 
@@ -142,7 +142,7 @@ body {
   top: 55%;
   width: 164px;
   height: 240px;
-  transform: translate(-50%, -50%) scale(1.2);
+  transform: translate(-50%, -50%) scale(1.12);
   transition: transform 0.26s ease;
   filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.38));
   border: 0;
@@ -409,7 +409,7 @@ body {
 }
 
 .scene.action-cuddle .erik {
-  transform: translate(-50%, -54%) scale(1.2);
+  transform: translate(-50%, -54%) scale(1.14);
 }
 
 .scene.action-cuddle .hand.left {
@@ -421,7 +421,7 @@ body {
 }
 
 .scene.action-kiss .erik {
-  transform: translate(-50%, -56%) scale(1.15);
+  transform: translate(-50%, -56%) scale(1.1);
 }
 
 .scene.action-kiss .hand.left {
@@ -454,7 +454,7 @@ body {
 }
 
 .scene.action-undress .erik {
-  transform: translate(-50%, -52%) scale(1.24);
+  transform: translate(-50%, -52%) scale(1.16);
 }
 
 .scene.action-undress .erik .head {
@@ -491,7 +491,7 @@ body {
 }
 
 .scene.action-gift .erik {
-  transform: translate(-50%, -50%) scale(1.04);
+  transform: translate(-50%, -50%) scale(1.01);
 }
 
 .scene.action-gift .erik .arm.right {
@@ -633,6 +633,9 @@ body {
   background: var(--card);
   backdrop-filter: blur(16px);
   display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  min-height: 0;
+  overflow: hidden;
   gap: 7px;
 }
 
@@ -757,6 +760,11 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 6px;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 2px;
+  align-content: start;
 }
 
 .action-grid button {
@@ -964,16 +972,16 @@ body {
 
 @keyframes erik-pulse {
   0% {
-    transform: translate(-50%, -50%) scale(1.2);
+    transform: translate(-50%, -50%) scale(1.12);
   }
   40% {
-    transform: translate(-50%, -52%) scale(1.34);
+    transform: translate(-50%, -52%) scale(1.24);
   }
   75% {
-    transform: translate(-50%, -50%) scale(1.24);
+    transform: translate(-50%, -50%) scale(1.16);
   }
   100% {
-    transform: translate(-50%, -50%) scale(1.2);
+    transform: translate(-50%, -50%) scale(1.12);
   }
 }
 
@@ -1049,7 +1057,7 @@ body {
   .erik {
     width: 150px;
     height: 226px;
-    transform: translate(-50%, -50%) scale(1.15);
+    transform: translate(-50%, -50%) scale(1.08);
   }
 
   .action-grid {
