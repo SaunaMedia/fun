@@ -372,14 +372,13 @@ function createActionButton(action) {
 function createInlineOptionControl(action) {
   if (action.id !== "badFood" && action.id !== "insult") return null;
 
-  const wrap = document.createElement("label");
+  const wrap = document.createElement("div");
   wrap.className = "action-inline-option";
 
-  const title = document.createElement("span");
   const select = document.createElement("select");
 
   if (action.id === "badFood") {
-    title.textContent = "Wähle Essen:";
+    select.setAttribute("aria-label", "Falsches Essen wählen");
     dislikedFoodProps.forEach((food) => {
       const option = document.createElement("option");
       option.value = food.id;
@@ -391,7 +390,7 @@ function createInlineOptionControl(action) {
       state.selectedBadFoodId = select.value;
     });
   } else {
-    title.textContent = "Wähle Beleidigung:";
+    select.setAttribute("aria-label", "Beleidigung wählen");
     insultProps.forEach((insult) => {
       const option = document.createElement("option");
       option.value = insult.id;
@@ -404,7 +403,7 @@ function createInlineOptionControl(action) {
     });
   }
 
-  wrap.append(title, select);
+  wrap.append(select);
   wrap.addEventListener("click", (event) => event.stopPropagation());
   select.addEventListener("click", (event) => event.stopPropagation());
 
