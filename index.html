@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Erik Boyfriend Simulator</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="phone">
+    <header class="titlebar" aria-label="Spielname">
+      <h1>Erik Boyfriend Simulator</h1>
+    </header>
+
+    <header class="hud" aria-live="polite">
+      <article class="stat">
+        <h1>Erik-Glück</h1>
+        <strong id="happinessValue">12%</strong>
+        <div class="meter" role="img" aria-label="Erik Glück von 1 bis 100 Prozent">
+          <span id="happinessFill"></span>
+        </div>
+      </article>
+      <article class="stat">
+        <h2>Bretzeln</h2>
+        <strong id="pretzelValue">0</strong>
+      </article>
+    </header>
+
+    <section id="scene" class="scene" aria-label="Erik Avatar">
+      <div class="scene-light"></div>
+      <div class="scene-floor"></div>
+
+      <button id="erikAvatar" class="erik mood-sad" type="button" aria-label="Tippe auf Erik">
+        <span class="hair"></span>
+        <span class="head">
+          <span class="eyes"></span>
+          <span class="glasses">
+            <span class="lens left"></span>
+            <span class="bridge"></span>
+            <span class="lens right"></span>
+          </span>
+          <span class="mouth"></span>
+        </span>
+        <span class="torso"></span>
+        <span class="leg left"></span>
+        <span class="leg right"></span>
+        <span class="shoe left"></span>
+        <span class="shoe right"></span>
+        <span class="arm left"></span>
+        <span class="arm right"></span>
+      </button>
+
+      <div id="actionProp" class="action-prop is-hidden" aria-hidden="true">
+        <span id="actionEmoji">🍺</span>
+      </div>
+
+      <div id="outfitReveal" class="outfit-reveal is-hidden" aria-hidden="true">
+        <span class="bubble left"></span>
+        <span class="bubble right"></span>
+      </div>
+
+      <div class="ami-hands" aria-hidden="true">
+        <span id="leftHand" class="hand left"></span>
+        <span id="rightHand" class="hand right"></span>
+      </div>
+
+      <div class="scene-copy" aria-live="polite">
+        <p id="ctaText" class="cta">Tippe auf Erik, um ihn glücklich zu machen.</p>
+        <p id="statusText" class="status">Wähle eine Aktion und tippe dann auf Erik.</p>
+      </div>
+    </section>
+
+    <section class="controls">
+      <div class="mode-switch" role="tablist" aria-label="Vorauswahl">
+        <button id="modeHappyButton" class="mode is-active" type="button">Glücklich machen</button>
+        <button id="modeTeaseButton" class="mode" type="button">Ärgern</button>
+      </div>
+
+      <div id="actionGrid" class="action-grid"></div>
+
+      <p id="pretzelHint" class="pretzel-hint">Verdient eine Bretzel</p>
+    </section>
+  </main>
+
+  <script src="./game.js"></script>
+</body>
+</html>
