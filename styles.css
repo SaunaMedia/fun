@@ -770,17 +770,6 @@ body {
   align-content: start;
 }
 
-.scroll-fade {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 26px;
-  border-radius: 0 0 12px 12px;
-  background: linear-gradient(180deg, rgba(18, 18, 33, 0), rgba(18, 18, 33, 0.95));
-  pointer-events: none;
-}
-
 .action-grid button {
   min-height: 34px;
   border-radius: 11px;
