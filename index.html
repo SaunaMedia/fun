@@ -65,7 +65,7 @@
       </div>
 
       <div class="scene-copy" aria-live="polite">
-        <p id="ctaText" class="cta">Tippe auf Erik, um ihn glücklich zu machen.</p>
+        <p id="ctaText" class="cta">Tippe auf Erik, um ihn glücklich zu machen &amp; verdiene damit Bretzeln.</p>
         <p id="statusText" class="status">Wähle eine Aktion und tippe dann auf Erik.</p>
       </div>
     </section>
@@ -76,9 +76,12 @@
         <button id="modeTeaseButton" class="mode" type="button">Ärgern</button>
       </div>
 
-      <div id="actionGrid" class="action-grid"></div>
+      <div class="action-grid-shell">
+        <div id="actionGrid" class="action-grid"></div>
+        <div class="scroll-fade" aria-hidden="true"></div>
+      </div>
 
-      <p id="pretzelHint" class="pretzel-hint">Verdient eine Bretzel</p>
+      <p class="scroll-hint">Scrolle nach unten für mehr</p>
     </section>
   </main>
 

@@ -722,12 +722,13 @@ body {
   animation: status-pop 0.54s ease;
 }
 
-.pretzel-hint {
+.scroll-hint {
   margin: 0;
   text-align: center;
   line-height: 1.2;
-  font-size: 0.74rem;
-  color: #c7d3eb;
+  font-size: 0.72rem;
+  color: #d7deef;
+  letter-spacing: 0.01em;
 }
 
 .context-options {
@@ -756,6 +757,11 @@ body {
   padding: 6px;
 }
 
+.action-grid-shell {
+  position: relative;
+  min-height: 0;
+}
+
 .action-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -763,8 +769,19 @@ body {
   min-height: 0;
   overflow-y: auto;
   overscroll-behavior: contain;
-  padding-right: 2px;
+  padding: 0 2px 20px 0;
   align-content: start;
+}
+
+.scroll-fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 26px;
+  border-radius: 0 0 12px 12px;
+  background: linear-gradient(180deg, rgba(18, 18, 33, 0), rgba(18, 18, 33, 0.95));
+  pointer-events: none;
 }
 
 .action-grid button {
@@ -1080,7 +1097,7 @@ body {
   }
 
   .status,
-  .pretzel-hint {
+  .scroll-hint {
     font-size: 0.68rem;
   }
 }

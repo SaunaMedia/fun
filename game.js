@@ -4,7 +4,6 @@ const ui = {
   pretzelValue: document.getElementById("pretzelValue"),
   statusText: document.getElementById("statusText"),
   ctaText: document.getElementById("ctaText"),
-  pretzelHint: document.getElementById("pretzelHint"),
   modeHappyButton: document.getElementById("modeHappyButton"),
   modeTeaseButton: document.getElementById("modeTeaseButton"),
   controls: document.querySelector(".controls"),
@@ -347,20 +346,12 @@ function changePretzels(amount) {
 }
 
 function renderSelectionTexts() {
-  ui.ctaText.textContent =
-    state.mode === "happy"
-      ? "Tippe auf Erik, um ihn glücklich zu machen."
-      : "Tippe auf Erik, um ihn zu ärgern.";
-
-  ui.pretzelHint.textContent =
-    state.mode === "happy" ? "Glücklich machen (+1 Bretzel)" : "Ärgern (-1 Bretzel)";
+  ui.ctaText.textContent = "Tippe auf Erik, um ihn glücklich zu machen & verdiene damit Bretzeln.";
 }
 
 function selectAction(actionId) {
   state.selectedActionId = actionId;
   renderActionButtons();
-  const action = getActionById(actionId);
-  if (action) setStatus(`Ausgewählt: ${action.label}.`);
   renderSelectionTexts();
 }
 
@@ -398,8 +389,6 @@ function createInlineOptionControl(action) {
     select.value = state.selectedBadFoodId;
     select.addEventListener("change", () => {
       state.selectedBadFoodId = select.value;
-      const selectedFood = getDislikedFoodById(state.selectedBadFoodId);
-      setStatus(`Ausgewählt: 🥕 Falsches Essen (${selectedFood.name}).`);
     });
   } else {
     title.textContent = "Wähle Beleidigung:";
@@ -412,8 +401,6 @@ function createInlineOptionControl(action) {
     select.value = state.selectedInsultId;
     select.addEventListener("change", () => {
       state.selectedInsultId = select.value;
-      const selectedInsult = getInsultById(state.selectedInsultId);
-      setStatus(`Ausgewählt: 🗯️ Beleidigung (${selectedInsult.label}).`);
     });
   }
 
@@ -453,10 +440,6 @@ function setMode(mode) {
   ui.modeTeaseButton.classList.toggle("is-active", mode === "tease");
   renderActionButtons();
   renderSelectionTexts();
-  const selectedAction = getActionById(state.selectedActionId);
-  if (selectedAction) {
-    setStatus(`Ausgewählt: ${selectedAction.label}.`);
-  }
 }
 
 function getRandomDislikedFood() {
